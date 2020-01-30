@@ -16,6 +16,9 @@
       crossorigin="anonymous"
     />
 
+    <!-- CSS local -->
+    <link rel="stylesheet" href="./assets/style.css" />
+
     <title>MC Server</title>
   </head>
   <body>
@@ -34,8 +37,11 @@
         </div> -->
       </header>
 
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Cover your page.</h1>
+      <main role="main" class="inner cover text-light">
+        <h1 class="cover-heading">
+          IP address: <input disabled value="52.35.116.230" id="target"></input>
+        </h1>
+        <button onclick="copy();">click to copy</button>
         <p class="lead">
           Cover is a one-page template for building simple and beautiful home
           pages. Download, edit the text, and add your own fullscreen background
@@ -46,16 +52,25 @@
         </p>
       </main>
 
-      <footer class="mastfoot mt-auto">
+      <footer class="mastfoot mt-auto text-light">
         <div class="inner">
           <p>
-            Cover template for
-            <a href="https://getbootstrap.com/">Bootstrap</a>, by
-            <a href="https://twitter.com/mdo">@mdo</a>.
+            © Viet Vo
+            <a href="https://github.com/viet-vo/minecraft-site">Made</a>, by
+            <a href="https://vietvodev.com">me</a>.
           </p>
         </div>
       </footer>
     </div>
+    <script>
+      function copy() {
+        const copyText = document.getElementById("target");
+        console.log(copyText)
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+      }
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
